@@ -1,0 +1,15 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+// Materialize styles Overrides
+
+// 1. Colors
+$primary-color: #0277bd;
+// 10. Forms
+// Text Inputs + Textarea
+$label-font-size: 1.2rem;
+
+@import "materialize";
+
+body {
+  background-color: color('grey','lighten-3');
+}

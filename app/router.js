@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('product');
+  this.route('shopping-cart');
 });
 
 export default Router;

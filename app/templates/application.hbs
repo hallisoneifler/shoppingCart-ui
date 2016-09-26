@@ -1,0 +1,20 @@
+{{#ms-nav-bar}}
+  <a href="#!" class="brand-logo">Gaucho's Shop</a>
+  <ul class="right hide-on-med-and-down">
+    <li>
+      {{link-to 'Products' "product"}}
+    </li>
+    <li>
+      {{link-to 'Index' "index"}}
+    </li>
+  </ul>
+  <ul class="side-nav" id="mobile-demo">
+    <li>
+      {{link-to ('Products') "product"}}
+    </li>
+    <li>
+      {{link-to ('Index') "index"}}
+    </li>
+  </ul>
+{{/ms-nav-bar}}
+{{outlet}}
