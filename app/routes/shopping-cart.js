@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  cart: Ember.inject.service('product-service'),
   ajax: Ember.inject.service(),
   actions: {
     removeItem(item) {
