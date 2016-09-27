@@ -1,1 +1,11 @@
-{{outlet}}
+<div class="container">
+  <div class="card-content">
+    <div class="center-align">
+      {{#if model }}
+        
+      {{else}}
+        <a href="#" {{action 'insertProducts'}}>To add products to the list</a>
+      {{/if}}
+    </div>
+  </div>
+</div>

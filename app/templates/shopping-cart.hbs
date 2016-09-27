@@ -1,18 +1,18 @@
 <div class="container">
   <div class="card-content">
     <div class="center-align">
-      <span class="card-title bold">Shopping Cart</span>
         <ul class="collection">
           {{#each model as |item|}}
             <li class="collection-item avatar">
               <img src="{{item.imageUrl}}" alt="" class="circle">
-              <span class="title">{{item.name}}</span>
-              <p>{{item.quantity}}<br>
-
-              </p>
-              <a href="#" {{action 'removeItem' item}} class="secondary-content">Remove</a>
+              <span class="title">{{item.product_name}}</span>
+              {{sp-input value=item.quantity}}
+              <a href="#" {{action 'checkout' item}} class="secondary-content">Checkout</a>
+              <br>
+              <a href="#" {{action 'removeItem' item}} class="tertiary-content">Remove</a>
             </li>
           {{/each}}
+          <span class="tertiary-content"><b>Total:{{totalCart}}</b></span>
         </ul>
     </div>
   </div>

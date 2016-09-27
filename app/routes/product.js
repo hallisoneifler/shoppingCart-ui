@@ -5,7 +5,6 @@ export default Ember.Route.extend({
   ajax: Ember.inject.service(),
   actions: {
     addItem(item) {
-      let id_product = item.id;
       this.get('cart').add(item);
     }
   },
