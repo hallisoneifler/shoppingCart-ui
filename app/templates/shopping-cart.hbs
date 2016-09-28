@@ -1,20 +1,25 @@
 <div class="container">
   <div class="card-content">
-    <div class="center-align">
-        <ul class="collection">
-          {{#each model as |item|}}
-            <li class="collection-item avatar">
-              <img src="{{item.imageUrl}}" alt="" class="circle">
-              <span class="title">{{item.product_name}}</span>
-              <span class="title">{{item.total}}</span>
-              {{sp-input value=item.quantity amount="updateTotal"}}
-              <br>
-              <a href="#" {{action 'removeItem' item}} class="tertiary-content">Remove</a>
-            </li>
-          {{/each}}
-          <span class="tertiary-content"><b>Total:{{total}}</b></span>
-          <a href="#" {{action 'checkout'}} class="secondary-content">Checkout</a>
-        </ul>
-    </div>
+    <ul class="collection">
+      {{#each model as |item|}}
+        <li class="collection-item avatar">
+          <img src="{{item.imageUrl}}" alt="" class="circle">
+          <span class="title">{{item.product_name}}</span>
+          <p>
+              <b>Item value: </b>{{item.total}}<br>
+              <b>Quantity: </b>{{item.quantity}}<br>
+          </p>
+          <a href="#" class="secondary-content">
+            <i class="material-icons"{{action 'decreaseItem' item}}>remove_circle</i>
+            <i class="material-icons"{{action 'increaseItem' item}}>add_circle</i>
+            <i class="material-icons"{{action 'removeItem' item}}>delete</i>
+          </a>
+        </li>
+      {{/each}}
+      <span class="tertiary-content"><b>Subtotal:{{total}}</b></span>
+      <a href="#" {{action 'checkout'}} class="secondary-content">
+        <i class="material-icons">credit_card</i>Checkout
+      </a>
+    </ul>
   </div>
 </div>

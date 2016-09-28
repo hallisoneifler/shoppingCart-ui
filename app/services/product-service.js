@@ -26,6 +26,7 @@ export default Ember.Service.extend({
 
   remove(item) {
     this.get('items').removeObject(item);
+    return item.destroyRecord();
   },
 
   empty() {

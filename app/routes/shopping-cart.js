@@ -13,9 +13,6 @@ export default Ember.Route.extend({
           console.log(error);
         });
       })
-    },
-    removeItem(item) {
-      this.get('cart').remove(item);
     }
   },
   model() {
