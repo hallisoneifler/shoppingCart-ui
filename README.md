@@ -11,6 +11,8 @@ You will need the following things properly installed on your computer.
 * [Bower](http://bower.io/)
 * [Ember CLI](http://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* Download and install the server (shopping-cart)
+-https://github.com/hallisoneifler/shopping-cart
 
 ## Installation
 
