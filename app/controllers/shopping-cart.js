@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       var newTotal = 0;
       this.get('store').peekAll('shopping-cart').reduce(function(previousValue, item){
         newTotal += item.get('total');
-      })
+      });
       this.set('total',newTotal);
     },
     increaseItem(item){
@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
     },
     decreaseItem(item){
       var quantity = item.get('quantity');
-      if (quantity == 0) {
+      if (quantity === 0) {
         this.get('cart').remove(item);
       } else {
         item.set('quantity',quantity-1);
@@ -28,8 +28,7 @@ export default Ember.Controller.extend({
     removeItem(item) {
       this.get('cart').remove(item).then(()=>{
         this.send('updateTotal');
-      })
-
+    });
     }
   }
 });

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Materialize from 'materialize';
 
 export default Ember.Service.extend({
   store: Ember.inject.service('store'),
@@ -30,6 +31,7 @@ export default Ember.Service.extend({
   },
 
   empty() {
-    this.get('items').clear();
+    this.set('items',[]);
+    this.get('store').unloadAll();
   }
 });
