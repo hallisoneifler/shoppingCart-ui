@@ -1,6 +1,6 @@
 # Shopping-cart-ui
 
-It's also possible to access in mobile
+It's also possible to access on mobile
 
 ## Prerequisites
 
