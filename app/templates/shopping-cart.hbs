@@ -6,13 +6,14 @@
             <li class="collection-item avatar">
               <img src="{{item.imageUrl}}" alt="" class="circle">
               <span class="title">{{item.product_name}}</span>
-              {{sp-input value=item.quantity}}
-              <a href="#" {{action 'checkout' item}} class="secondary-content">Checkout</a>
+              <span class="title">{{item.total}}</span>
+              {{sp-input value=item.quantity amount="updateTotal"}}
               <br>
               <a href="#" {{action 'removeItem' item}} class="tertiary-content">Remove</a>
             </li>
           {{/each}}
-          <span class="tertiary-content"><b>Total:{{totalCart}}</b></span>
+          <span class="tertiary-content"><b>Total:{{total}}</b></span>
+          <a href="#" {{action 'checkout'}} class="secondary-content">Checkout</a>
         </ul>
     </div>
   </div>

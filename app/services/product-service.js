@@ -9,17 +9,13 @@ export default Ember.Service.extend({
     this.set('items', []);
   },
 
-  total(){
-    return 1000;
-  },
-
   add(product) {
-    var newModel = this.get('store').createRecord('commerce-item');
+    var newModel = this.get('store').createRecord('shopping-cart');
     newModel.set('product_id', product.id);
     newModel.set('product_name', product.name);
     newModel.set('imageUrl', product.imageUrl);
     newModel.set('price', product.price);
-    newModel.set('quantity', 1)
+    newModel.set('quantity', 1);
     this.get('items').pushObject(newModel);
     Materialize.toast("Added to cart", 3000);
   },

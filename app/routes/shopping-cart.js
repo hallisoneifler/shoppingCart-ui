@@ -3,29 +3,25 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   cart: Ember.inject.service('product-service'),
   ajax: Ember.inject.service(),
-  totalCart: Ember.computed(function(){
-    return 100000;
-  }),
   actions: {
-    checkout(item) {
-      let id_product = item.id;
-      let quantity = 1;
-
-      return this.get('ajax').request('/shoppingCart', {
-        method: 'GET',
-        data: {
-          id_product, quantity
-        }
-      }).then(()=>{
-        this.transitionTo('product');
-      });
+    checkout() {
+      var items = this.get('cart').list();
+      items.forEach(function(item) {
+        item.save().then(()=>{
+          console.log('Save');
+        }).catch((error)=>{
+          console.log(error);
+        });
+      })
     },
     removeItem(item) {
-      let id_product = item.id;
-      this.get('cart').remove(id_product);
+      this.get('cart').remove(item.id);
     }
   },
   model() {
     return this.get('cart').list();
+  },
+  afterModel() {
+    this.controllerFor('shopping-cart').send('updateTotal');
   }
 });
